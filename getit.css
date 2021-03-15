@@ -1,0 +1,247 @@
+/*
+Algumas informações úteis e dicas:
+  - Fontes disponíveis:
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+  - Cores:
+    Tons de amarelo:
+      #e4fc2b
+      #e0d426
+      #f7d736
+      #e0af26
+      #fcb02b
+    Tons de cinza:
+      #2c2c2c
+      #4c4c4c
+    Cores dos cards:
+      #ead3a7
+      #9de0f5
+      #ef89ba
+      #fae890
+      #abe9c1
+  - Sombra: https://codepen.io/sdthornton/pen/wBZdXq
+ */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* Você pode usar o CSS comentado abaixo, se ajudar */
+/* Fonte: https://codepen.io/CrisWoler/pen/ogXBLj */
+
+.appbar {
+	background-color: #f7d736;	
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	box-shadow: 0 1px 24px 0 rgba(0, 0, 0, 0.75);
+	margin-bottom: 1rem;
+}
+
+.logo{
+  width: 7%;
+  margin: 0.5rem;
+}
+
+.subtitle{
+  align-self: center;
+  margin-left: 0.5rem;
+  font-size: 12px;
+}
+
+.form-card{
+  display:flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 35%;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.75);
+  border: none;
+  
+} 
+
+.form-card input[type=text] {
+  font-family: 'Roboto', sans-serif;
+  box-shadow: none;
+  border-bottom: none;
+  font-size: 120%;
+}
+
+.form-card-title{
+  font-size: auto;
+  margin: 1rem;
+  border:none;
+}
+
+.autoresize{
+  font-family: 'Roboto', sans-serif;
+  font-size: auto;
+  resize:none;
+  border:none;
+  margin-left: 1rem;
+}
+
+.btn {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  border:none;
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0 , 0, 0.6);
+
+  background-color: #f7d736;
+
+  transition: background-color 0.3s;
+
+  margin: 0.75rem;
+}
+
+/* --------------------------------------CARTÕES--------------------------------------*/
+.card-container{
+  margin: 1.5rem;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: space-around;
+
+}
+
+.card{
+  display: flex;
+  justify-content: space-evenly;
+	flex-direction: column;
+
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  width: 25%;
+
+	min-height: 8rem;
+  max-width: 12rem;
+
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.75);
+  border: none;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.75);
+}
+
+.card-title {
+  font-family: 'Permanent Marker', cursive;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: -1.5rem;
+  margin-left: 0.4rem;
+}
+
+.card-content {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.75rem;
+  align-self:center;
+  margin: 0.1rem;
+} 
+
+
+
+.btn > * {
+  position: relative;
+}
+
+.btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
+} 
+
+
+.card-rotation-1  {
+  background-color: #abe9c1;
+  transform: rotate(3deg);
+  
+}
+.card-rotation-2  {
+  background-color: #ef89ba;
+  transform: rotate(6deg);
+}
+.card-rotation-3  {
+  background-color: #fae890;
+  transform: rotate(9deg);
+}
+.card-rotation-4  {
+  background-color: #9de0f5;
+  transform: rotate(-3deg);
+}
+
+.card-rotation-5  {
+  background-color: #abe9c1;
+  transform: rotate(-6deg);
+}
+.card-rotation-6  {
+  background-color:  #ef89ba;
+  transform: rotate(-9deg);
+}
+.card-rotation-7  {
+  background-color: #fae890;
+  transform: rotate(3deg);
+}
+.card-rotation-8  {
+  background-color:  #9de0f5;
+  transform: rotate(6deg);
+}
+.card-rotation-9  {
+  background-color: #abe9c1;
+  transform: rotate(9deg);
+}
+.card-rotation-10 {
+  background-color: #ef89ba;
+  transform: rotate(-3deg);
+}
+.card-rotation-11 {
+  background-color: #ead3a7;
+  transform: rotate(-6deg);
+}
+.card-rotation-12 {
+  background-color: #9de0f5;
+  transform: rotate(-9deg);
+}
+.card-rotation-13 {
+  background-color: #abe9c1;
+  transform: rotate(3deg);
+}
+.card-rotation-14 {
+  background-color: #ef89ba;
+  transform: rotate(6deg);
+}
+.card-rotation-15 {
+  background-color: #fae890;
+  transform: rotate(9deg);
+}
