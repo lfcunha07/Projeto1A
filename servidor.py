@@ -1,7 +1,7 @@
 import socket
 from pathlib import Path
 from utils import extract_route, read_file, build_response
-from views import index
+from views import index, deleteNote, editNote
 
 CUR_DIR = Path(__file__).parent
 SERVER_HOST = '0.0.0.0'
@@ -16,17 +16,20 @@ print(f'Servidor escutando em (ctrl+click): http://{SERVER_HOST}:{SERVER_PORT}')
 
 while True:
     client_connection, client_address = server_socket.accept()
-
     request = client_connection.recv(1024).decode()
-    print(request)
-
     route = extract_route(request)
-
     filepath = CUR_DIR / route
+
     if filepath.is_file():
         response = build_response(read_file(filepath)) 
     elif route == '':
         response = index(request)
+    elif route.startswith('delete/'):
+        note_to_delete = route.split("/")
+        response = deleteNote(note_to_delete[1])
+    elif route.startswith('edit/'):
+        note_to_edit = route.split("/")
+        response = editNote(request, note_to_edit[1])
     else:
         response = build_response()
 

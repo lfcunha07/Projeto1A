@@ -23,26 +23,24 @@ def load_data(path):
     with open(file_path, 'rt') as file:
         return json.load(file)
 
+def save_data(params, path):
+    file_path = str("data/" + path)
+    with open(file_path, 'wt') as file:
+        return json.dump(params, file)
+
 def load_template(name_file):
-    path = str("templates/"+name_file)
+    path = str("templates/" + name_file)
     with open(path,'rt') as file:
         file_string = str(file.read())
         return file_string
 
 def json_writter(params, path):
-    file_path = str("data/"+path)
+    file_path = str("data/" + path)
     loaded_file = load_data(path)
     loaded_file.append(params)
     with open(file_path, 'wt') as file:
         return json.dump(loaded_file, file)
-'''
-def json_deleter(params, path):
-    file_path = str("data/"+path)
-    loaded_file = load_data(path)
-    loaded_file.append(params)
-    with open(file_path, 'wt') as file:
-        return json.dump(loaded_file, file)
-'''
+
 def build_response(body='', code=200, reason='OK', headers=''):
     if isinstance(body, str):
         body = body.encode()
